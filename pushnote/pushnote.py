@@ -57,7 +57,6 @@ class PushNote(Magics):
         # args
         self.out = ''
         args = parse_argstring(self.pushnote, line)
-        #print(args)
         
         # config
         ## path
@@ -80,6 +79,7 @@ class PushNote(Magics):
             return None
         ## calling pushnote
         if args.msg:
+            args.msg = args.msg.strip('"\'')
             # get specific api key
             self._key_get(args)
             # get hostname
