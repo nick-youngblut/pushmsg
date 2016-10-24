@@ -13,9 +13,18 @@ An IPython magic extension for sending notifications with [Pushbullet](https://w
 
 ## Examples
 
-### Sending a notification
+### Send a notification (to computer, phone, tablet, etc)
 
-`%pushnote my long job just finished`
+`%pushnote "my long job just finished"`
+
+### List Pushbullet API keys (multiple keys supported)
+
+`%pushnote --list`
+
+### Add a Pushbullet API key
+
+`%pushnote --add my_key=o.xhsySHlsuslUX`
+
 
 ## Installation and updating
 
