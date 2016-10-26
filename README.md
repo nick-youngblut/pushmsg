@@ -59,6 +59,9 @@ To add an Pushbullet API key:
 
 `%pushnote -a my_key=o.FgVQMqK5IvASJOxllx`
 
+To send a message:
+
+`%pushnote "my long job is complete!"`
 
 
 ## Changelog
