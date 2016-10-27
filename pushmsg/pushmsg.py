@@ -50,7 +50,7 @@ class PushMsg(Magics):
     @line_magic
     def pushmsg(self, line):
         """
-        IPython magic function to get system info
+        IPython magic function to send notifications with pushbullet
         """
         # args
         self.out = ''
