@@ -4,6 +4,11 @@ import pushnote
 
 VERSION = pushnote.__version__
 
+install_reqs = [
+'ipython',
+'pushbullet.py>=0.10.0'
+]
+
 setup(
     name='pushnote',
     version=VERSION,
@@ -13,7 +18,7 @@ setup(
     author_email='nyoungb2@gmail.com',
     url='https://github.com/nick-youngblut/pushnote',
     packages=find_packages(exclude=[]),
-    install_requires=['ipython'],
+    install_requires=install_reqs,
     long_description="""
 An IPython magic extension for sending notifications with Pushbullet.
 """

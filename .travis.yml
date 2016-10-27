@@ -1,0 +1,18 @@
+sudo: required
+dist: trusty
+language: python
+matrix:
+    include:
+        - python: 3.5
+        - python: 3.4
+        - python: 2.7
+install:
+    - source ci/.travis_install.sh
+script:
+    - bash ci/.travis_test.sh
+notifications:
+    email:
+      recipients:
+          - nyoungb2@gmail.com
+    on_success: always
+    on_failure: always
