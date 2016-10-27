@@ -8,6 +8,7 @@ matrix:
         - python: 2.7
 install:
     - source ci/.travis_install.sh
+    - pip install .
 script:
     - bash ci/.travis_test.sh
 notifications:
