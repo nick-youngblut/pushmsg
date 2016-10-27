@@ -12,7 +12,7 @@ install_reqs = [
 setup(
     name='pushnote',
     version=VERSION,
-    license='GPL-2',
+    license='MIT',
     description=('IPython magic function to send notifications wtih Pushbullet'),
     author='Nicholas Youngblut',
     author_email='nyoungb2@gmail.com',
