@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/nick-youngblut/pushmsg.svg?branch=master)](https://travis-ci.org/nick-youngblut/pushmsg)
+[![Build Status](https://travis-ci.org/nick-youngblut/pushnote.svg?branch=master)](https://travis-ci.org/nick-youngblut/pushnote)
 
 pushmsg
 ========
