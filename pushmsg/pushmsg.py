@@ -1,11 +1,9 @@
 """
-IPython magic function to print date/time stamps and
-various system information.
-Author: Sebastian Raschka <sebastianraschka.com>
-License: BSD 3 clause
+IPython magic function to provide notifications via PushBullet
+Author: Nicholas Youngblut <nyoungb2@gmail.com>
+License: MIT
 """
 
-#from . import __version__
 from __future__ import print_function
 
 import os
