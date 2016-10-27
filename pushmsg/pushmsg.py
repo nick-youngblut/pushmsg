@@ -28,7 +28,7 @@ class PackageNotFoundError(Exception):
 
 
 @magics_class
-class PushNote(Magics):
+class PushMsg(Magics):
     """
     IPython magic function to send notifications via Pushbullet
     """
@@ -50,13 +50,13 @@ class PushNote(Magics):
 
     
     @line_magic
-    def pushnote(self, line):
+    def pushmsg(self, line):
         """
         IPython magic function to get system info
         """
         # args
         self.out = ''
-        args = parse_argstring(self.pushnote, line)
+        args = parse_argstring(self.pushmsg, line)
         
         # config
         ## path
@@ -77,7 +77,7 @@ class PushNote(Magics):
         if args.list:
             self._key_list()
             return None
-        ## calling pushnote
+        ## calling pushbullet
         if args.msg:
             args.msg = args.msg.strip('"\'')
             # get specific api key
@@ -85,8 +85,8 @@ class PushNote(Magics):
             # get hostname
             if args.hostname:
                 args.msg = 'host:{}\n{}'.format(gethostname(), args.msg)
-            # call pushnote
-            self._pushnote(args)
+            # call pushbullet
+            self._pushmsg(args)
             
 
     def _set_config_path(self, args):
@@ -153,11 +153,11 @@ class PushNote(Magics):
             except:
                 raise IOError('No API keys found!')
 
-    def _pushnote(self,args):
+    def _pushmsg(self,args):
         pb = Pushbullet(self.api_key)
         push = pb.push_note(args.msg, '')
 
         
 def load_ipython_extension(ipython):
-    ipython.register_magics(PushNote)
+    ipython.register_magics(PushMsg)
 

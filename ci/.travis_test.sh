@@ -3,5 +3,5 @@
 set -e
 
 python -c "import IPython; print('IPython %s' % IPython.__version__)";
-python -c "import pushnote; print('pushnote %s' % pushnote.__version__)";
-ipython -c "%load_ext pushnote";
+python -c "import pushmsg; print('pushmsg %s' % pushmsg.__version__)";
+ipython -c "%load_ext pushmsg";

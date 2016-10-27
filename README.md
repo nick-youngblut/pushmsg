@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/nick-youngblut/pushnote.svg?branch=master)](https://travis-ci.org/nick-youngblut/pushnote)
+[![Build Status](https://travis-ci.org/nick-youngblut/pushmsg.svg?branch=master)](https://travis-ci.org/nick-youngblut/pushmsg)
 
-pushnote
+pushmsg
 ========
 
 An IPython magic extension for sending notifications with [Pushbullet](https://www.pushbullet.com/)
@@ -17,15 +17,16 @@ An IPython magic extension for sending notifications with [Pushbullet](https://w
 
 ### Send a notification (to computer, phone, tablet, etc)
 
-`%pushnote "my long job just finished"`
-
-### List Pushbullet API keys (multiple keys supported)
-
-`%pushnote --list`
+`%pushmsg "my long job just finished"`
 
 ### Add a Pushbullet API key
 
-`%pushnote --add my_key=o.xhsySHlsuslUX`
+`%pushmsg --add my_key=o.xhsySHlsuslUX`
+
+### List Pushbullet API keys (multiple keys supported)
+
+`%pushmsg --list`
+
 
 
 ## Installation and updating
@@ -35,7 +36,7 @@ An IPython magic extension for sending notifications with [Pushbullet](https://w
 The pushbullet line magic can be installed from GitHub by executing:
 
 ```bash
-pip install -e git+https://github.com/nick-youngblut/pushnote#egg=pushnote
+pip install -e git+https://github.com/nick-youngblut/pushmsg#egg=pushmsg
 ```
 
 ### Pushbullet API key
@@ -49,21 +50,21 @@ pip install -e git+https://github.com/nick-youngblut/pushnote#egg=pushnote
 
 [[top](#sections)]
 
-After successful installation, the `pushnote` magic extension can be loaded via:
+After successful installation, the `pushmsg` magic extension can be loaded via:
 
-`%load_ext pushnote`
+`%load_ext pushmsg`
 
 To get an overview of all available options, type:
 
-`%pushnote?`
+`%pushmsg?`
 
 To add an Pushbullet API key:
 
-`%pushnote -a my_key=o.FgVQMqK5IvASJOxllx`
+`%pushmsg -a my_key=o.FgVQMqK5IvASJOxllx`
 
 To send a message:
 
-`%pushnote "my long job is complete!"`
+`%pushmsg "my long job is complete!"`
 
 
 ## Changelog
