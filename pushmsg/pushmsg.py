@@ -11,6 +11,7 @@ import sys
 import re
 import time
 import IPython
+import ConfigParser
 from socket import gethostname
 from IPython.core.magic import Magics
 from IPython.core.magic import magics_class
