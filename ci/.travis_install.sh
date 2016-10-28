@@ -17,7 +17,11 @@ conda info -a
 
 conda create -n testenv python=$TRAVIS_PYTHON_VERSION ipython;
 source activate testenv;
+pip install pushbullet.py;
+
 
 python --version;
 python -c 'import IPython';
+python -c 'import pushbullet';
 python setup.py install;
+
