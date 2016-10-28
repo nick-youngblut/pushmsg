@@ -11,7 +11,6 @@ import sys
 import re
 import time
 import IPython
-import ConfigParser
 from socket import gethostname
 from IPython.core.magic import Magics
 from IPython.core.magic import magics_class
@@ -20,6 +19,9 @@ from IPython.core.magic_arguments import argument
 from IPython.core.magic_arguments import magic_arguments
 from IPython.core.magic_arguments import parse_argstring
 from pushbullet import Pushbullet
+from configparser import ConfigParser
+from configparser import DuplicateSectionError
+from configparser import NoSectionError
 
 class PackageNotFoundError(Exception):
     pass
@@ -94,8 +96,8 @@ class PushMsg(Magics):
             home_dir = os.path.expanduser('~')         
             self.config_path = os.path.join(home_dir, '.pushbullet')
 
-    def _init_config(self, args):
-        self.push_config = ConfigParser.ConfigParser()
+    def _init_config(self, args):        
+        self.push_config = ConfigParser()
         if not args.add and not os.path.isfile(self.config_path):
             raise IOError('No API key or pushbullet config file provided')
         if os.path.isfile(self.config_path):
@@ -109,7 +111,7 @@ class PushMsg(Magics):
             raise IOError(msg.format(args.add))
         try:
             self.push_config.add_section('API_keys')
-        except ConfigParser.DuplicateSectionError:
+        except DuplicateSectionError:
             pass                
         self.push_config.set('API_keys', api_key[0], api_key[1])
         # writing
@@ -131,7 +133,7 @@ class PushMsg(Magics):
             self.api_key_names = self.push_config.options('API_keys')
         except:
             msg = '"API_keys" section in pushbullet config not found'
-            raise ConfigParser.NoSectionError(msg)
+            raise NoSectionError(msg)
 
     def _key_list(self):
         for api_key_name in self.api_key_names:

@@ -6,6 +6,7 @@ VERSION = pushmsg.__version__
 
 install_reqs = [
 'ipython',
+'configparser',
 'pushbullet.py>=0.10.0'
 ]
 

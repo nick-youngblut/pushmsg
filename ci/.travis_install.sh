@@ -17,6 +17,7 @@ conda info -a
 
 conda create -n testenv python=$TRAVIS_PYTHON_VERSION ipython;
 source activate testenv;
+pip install configparser;
 pip install pushbullet.py;
 
 
