@@ -1,7 +1,10 @@
-[![Build Status](https://travis-ci.org/nick-youngblut/pushnote.svg?branch=master)](https://travis-ci.org/nick-youngblut/pushnote)
+[![Build Status](https://travis-ci.org/nick-youngblut/pushmsg.svg?branch=master)](https://travis-ci.org/nick-youngblut/pushmsg)
+![Python 2.7](https://img.shields.io/badge/python-2.7-blue.svg)
+![Python 3.5](https://img.shields.io/badge/python-3.5-blue.svg)
+
 
 pushmsg
-========
+=======
 
 An IPython magic extension for sending notifications with [Pushbullet](https://www.pushbullet.com/)
 
