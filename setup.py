@@ -14,7 +14,7 @@ setup(
     name='pushmsg',
     version=VERSION,
     license='MIT',
-    description=('IPython magic function to send notifications wtih Pushbullet'),
+    description=('IPython magic function to send notifications with Pushbullet'),
     author='Nicholas Youngblut',
     author_email='nyoungb2@gmail.com',
     url='https://github.com/nick-youngblut/pushmsg',

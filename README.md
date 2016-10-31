@@ -1,7 +1,5 @@
 [![Build Status](https://travis-ci.org/nick-youngblut/pushmsg.svg?branch=master)](https://travis-ci.org/nick-youngblut/pushmsg)
-![Python 2.7](https://img.shields.io/badge/python-2.7-blue.svg)
-![Python 3.5](https://img.shields.io/badge/python-3.5-blue.svg)
-
+[![PyPI version](https://badge.fury.io/py/pushmsg.svg)](http://badge.fury.io/py/pushmsg)
 
 pushmsg
 =======
@@ -36,7 +34,13 @@ An IPython magic extension for sending notifications with [Pushbullet](https://w
 
 [[top](#sections)]
 
-The pushbullet line magic can be installed from GitHub by executing:
+The pushbullet line magic can be installed with pip by executing:
+
+```bash
+pip install pushmsg
+```
+
+The development version of pushmsg line magic can be installed from GitHub by executing:
 
 ```bash
 pip install -e git+https://github.com/nick-youngblut/pushmsg#egg=pushmsg
