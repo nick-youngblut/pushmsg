@@ -10,7 +10,7 @@ import os
 import sys
 import re
 import time
-import commands
+import subprocess
 import IPython
 from socket import gethostname
 from IPython.core.magic import Magics
@@ -203,7 +203,7 @@ class PushMsg(Magics):
         if args.job:
             regex = re.compile(args.job)
         while 1:
-            ret = commands.getoutput('qstat').split('\n')
+            ret = subprocess.check_output(['qstat']).split('\n')
             if ret[0] == '':
                 break
             if regex:
