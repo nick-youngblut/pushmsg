@@ -1,7 +1,7 @@
 """
 IPython magic function to provide notifications via PushBullet
 Author: Nicholas Youngblut <nyoungb2@gmail.com>
-License: MIT
+[6~License: MIT
 """
 
 from __future__ import print_function
@@ -10,6 +10,7 @@ import os
 import sys
 import re
 import time
+import commands
 import IPython
 from socket import gethostname
 from IPython.core.magic import Magics
@@ -45,6 +46,8 @@ class PushMsg(Magics):
               help='Remove one or more API keys from the pushbullet config file Provide a comma-separated list of key names')
     @argument('-p', '--path', type=str,
               help='Designate path to your pushbullet config file. Default: ~/.pushbullet')
+    @argument('-j', '--job', type=str,
+              help='Job ID to check for with qstat [only for pushmsg_qstat]. Default: no notification if any jobs present')
     @argument('-h', '--hostname', action='store_true',
               help='prints the host name')
 
@@ -157,6 +160,60 @@ class PushMsg(Magics):
         pb = Pushbullet(self.api_key)
         push = pb.push_note(args.msg, '')
 
+
+    
+    @line_magic
+    def pushmsg_qstat(self, line):
+        """
+        IPython magic function to send notifications with pushbullet when SGE job is complete.
+        Basically, the magic will just keep calling `qstat` until your particular job (set with the --job option),
+          or all jobs have completed (not longer displayed in qstat). The --job option will just be treated as
+          a regular expression for searching through the qstat output for any hits, so you can match a SGE jobID
+          or a job name. 
+        See the documentation from pushmsg for more information arguments. 
+        """
+        # args
+        self.out = ''
+        args = parse_argstring(self.pushmsg, line)
+        
+        # config
+        ## path
+        self._set_config_path(args)
+        ## read/create config
+        self._init_config(args)
+        ## getting API keys
+        self._key_get_all()
+        ## calling pushbullet
+        if args.msg:
+            args.msg = args.msg.strip('"\'')
+            # check qstat & wait
+            self._qstat(args)
+            # get specific api key
+            self._key_get(args)
+            # get hostname
+            if args.hostname:
+                args.msg = 'host:{}\n{}'.format(gethostname(), args.msg)
+            # call pushbullet
+            self._pushmsg(args)
+
+
+    def _qstat(self, args):
+        """Wait until SGE job is finished"""
+        regex = None
+        if args.job:
+            regex = re.compile(args.job)
+        while 1:
+            ret = commands.getoutput('qstat').split('\n')
+            if ret[0] == '':
+                break
+            if regex:
+                hits = [len(regex.findall(x)) for x in ret]
+                if sum(hits) < 1:
+                    break
+            time.sleep(2)
+        return None
+            
+                
         
 def load_ipython_extension(ipython):
     ipython.register_magics(PushMsg)

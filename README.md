@@ -28,6 +28,13 @@ An IPython magic extension for sending notifications with [Pushbullet](https://w
 
 `%pushmsg --list`
 
+### Wait for an SGE job to complete, then send a notification
+
+`%pushmsg_qstat --job my_sge_job "my SGE job just finished"`
+
+### Wait for all SGE jobs to complete, then send a notification
+
+`%pushmsg_qstat "All SGE jobs are finished"`
 
 
 ## Installation and updating
@@ -74,6 +81,23 @@ To send a message:
 `%pushmsg "my long job is complete!"`
 
 
+### Sun Grid Engine jobs 
+
+Wait for an SGE job to complete, then send a notification:
+
+`%pushmsg_qstat --job my_sge_job "my SGE job just finished"`
+
+Wait for all SGE jobs to complete, then send a notification:
+
+`%pushmsg_qstat "All SGE jobs are finished"`
+
+
+
 ## Changelog
 
 [[top](#sections)]
+
+### v0.2.0 
+
+* Added %pushmsg_qstat line magic and documentation
+
