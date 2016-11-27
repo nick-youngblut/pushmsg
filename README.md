@@ -36,6 +36,10 @@ An IPython magic extension for sending notifications with [Pushbullet](https://w
 
 `%pushmsg_qstat "All SGE jobs are finished"`
 
+### Send notifications from the command line
+
+`pushmsg "Job finished"`
+
 
 ## Installation and updating
 
@@ -92,6 +96,9 @@ Wait for all SGE jobs to complete, then send a notification:
 `%pushmsg_qstat "All SGE jobs are finished"`
 
 
+### Command line 
+
+`pushmg "job complete"`
 
 ## Changelog
 

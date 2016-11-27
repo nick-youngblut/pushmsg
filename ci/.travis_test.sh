@@ -2,6 +2,7 @@
 
 # test script
 pushmsg -l
+pushmsg_qstat -l
 
 # test line magic
 set -e
