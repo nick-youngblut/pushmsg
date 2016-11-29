@@ -203,7 +203,8 @@ class PushMsg(Magics):
         if args.job:
             regex = re.compile(args.job)
         while 1:
-            ret = subprocess.check_output(['qstat']).split('\n')
+            ret = subprocess.check_output(['qstat'])
+            ret = str(ret).split('\n')
             if ret[0] == '':
                 break
             if regex:

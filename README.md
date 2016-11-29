@@ -104,6 +104,10 @@ Wait for all SGE jobs to complete, then send a notification:
 
 [[top](#sections)]
 
+### v0.2.2 
+
+* Added pushmsg command line script
+
 ### v0.2.0 
 
 * Added %pushmsg_qstat line magic and documentation
