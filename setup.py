@@ -19,7 +19,8 @@ setup(
     author_email='nyoungb2@gmail.com',
     url='https://github.com/nick-youngblut/pushmsg',
     packages=find_packages(exclude=[]),
-    scripts=['scripts/pushmsg'],
+    scripts=['scripts/pushmsg',
+             'scripts/pushmsg_qstat'],
     install_requires=install_reqs,
     long_description="""
 An IPython magic extension for sending notifications with Pushbullet.
