@@ -20,26 +20,26 @@ jobs:
         auto-update-conda: true
         python-version: ${{ matrix.python-version }}
         channels: conda-forge,bioconda
-        activate-environment: TEMPLATE
+        activate-environment: pushmsg_env
     - name: conda env setup
       shell: bash -l {0}
       run: |
         conda info -a
         conda install python=${{ matrix.python-version }} ipython
-    - uses: actions/checkout@v2	
+    - uses: actions/checkout@v2
     - name: package install
       shell: bash -l {0}
       run: |
         python -m pip install --upgrade pip
         pip install pytest pytest-console-scripts
         python setup.py install
-    - name: Test with pytest
+    - name: Test
       shell: bash -l {0}
       run: |
         pushmsg -l
         pushmsg_qstat -l
         set -e
         python -c "import IPython; print('IPython %s' % IPython.__version__)";
-	python -c "import pushmsg; print('pushmsg %s' % pushmsg.__version__)";
-	ipython -c "%load_ext pushmsg";
+        python -c "import pushmsg; print('pushmsg %s' % pushmsg.__version__)";
+        ipython -c "%load_ext pushmsg";
         ipython -c "%load_ext pushmsg_qstat";
