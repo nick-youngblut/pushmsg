@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/nick-youngblut/pushmsg.svg?branch=master)](https://travis-ci.org/nick-youngblut/pushmsg)
+![pushmsg](https://github.com/nick-youngblut/pushmsg/workflows/pushmsg/badge.svg)
 [![PyPI version](https://badge.fury.io/py/pushmsg.svg)](http://badge.fury.io/py/pushmsg)
 
 pushmsg
