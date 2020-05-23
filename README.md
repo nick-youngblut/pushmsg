@@ -1,4 +1,4 @@
-![pushmsg](https://github.com/nick-youngblut/pushmsg/workflows/pushmsg/badge.svg)
+![.github/workflows/pythonpackage.yml](https://github.com/nick-youngblut/pushmsg/workflows/.github/workflows/pythonpackage.yml/badge.svg)
 [![PyPI version](https://badge.fury.io/py/pushmsg.svg)](http://badge.fury.io/py/pushmsg)
 
 pushmsg
