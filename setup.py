@@ -10,6 +10,10 @@ install_reqs = [
 'pushbullet.py>=0.10.0'
 ]
 
+desc = """An IPython magic extension for sending notifications with Pushbullet.
+It is useful for setting notfications for the completion of long jobs.
+"""
+
 setup(
     name='pushmsg',
     version=VERSION,
@@ -22,8 +26,5 @@ setup(
     scripts=['scripts/pushmsg',
              'scripts/pushmsg_qstat'],
     install_requires=install_reqs,
-    long_description="""
-An IPython magic extension for sending notifications with Pushbullet.
-It is useful for setting notfications for the completion of long jobs.
-"""
+    long_description=desc
 )
