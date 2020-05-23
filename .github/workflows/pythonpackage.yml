@@ -36,8 +36,8 @@ jobs:
     - name: Test
       shell: bash -l {0}
       run: |
-        pushmsg -l
-        pushmsg_qstat -l
+        pushmsg -h
+        pushmsg_qstat -h
         set -e
         python -c "import IPython; print('IPython %s' % IPython.__version__)";
         python -c "import pushmsg; print('pushmsg %s' % pushmsg.__version__)";

@@ -48,7 +48,7 @@ An IPython magic extension for sending notifications with [Pushbullet](https://w
 The pushbullet line magic can be installed with pip by executing:
 
 ```bash
-pip install pushmsg
+pip install pushbullet.py pushmsg
 ```
 
 The development version of pushmsg line magic can be installed from GitHub by executing:
@@ -56,6 +56,8 @@ The development version of pushmsg line magic can be installed from GitHub by ex
 ```bash
 pip install -e git+https://github.com/nick-youngblut/pushmsg#egg=pushmsg
 ```
+
+> If using the dev version, make sure to install `pushbullet.py`
 
 ### Pushbullet API key
 
